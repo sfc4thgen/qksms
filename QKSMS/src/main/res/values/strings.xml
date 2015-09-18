@@ -193,6 +193,10 @@
     <string name="pref_text">Text</string>
 
     <string name="pref_notifications">SMS notifications enabled</string>
+    <string name="pref_whitelist">Whitelist</string>
+    <string name="pref_whitelist_summary">Manage whitelist phone numbers</string>
+    <string name="pref_whitelist_ringtone">Whitelist ringtone</string>
+    <string name="pref_whitelist_ringtone_summary">Select whitelist notification sound</string>
     <string name="pref_led">Notification LED</string>
     <string name="pref_theme_led">Notification LED color</string>
     <string name="pref_wake">Wake phone</string>
@@ -304,11 +308,15 @@
     <string name="title_donate">Donate</string>
     <!--QK Response dialog title-->
     <string name="title_qk_responses">QK Responses</string>
+    <string name="title_whitelist">Whitelist</string>
+    <string name="title_add_whitelist">Add number</string>
+    <string name="title_remove_whitelist">Remove number</string>
 
     <!-- Menu shown in the context menu when long pressing on a message when the message contains
          one or more phone numbers and/or email addresses and the number or email is new to
          contacts. [CHAR LIMIT=50] -->
     <string name="menu_add_address_to_contacts">Add <xliff:g id="contactEmailOrNumber">%s</xliff:g> to People</string>
+    <string name="menu_add">Add</string>
 
     <!-- Context menu item on an individual message for viewing an attached slideshow -->
     <string name="view_slideshow">View slideshow</string>

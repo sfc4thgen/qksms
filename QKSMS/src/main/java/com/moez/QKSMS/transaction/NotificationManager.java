@@ -27,6 +27,7 @@ import com.android.mms.transaction.TransactionService;
 import com.android.mms.transaction.TransactionState;
 import com.google.android.mms.pdu_alt.PduHeaders;
 import com.moez.QKSMS.R;
+import com.moez.QKSMS.common.WhitelistUtils;
 import com.moez.QKSMS.data.Contact;
 import com.moez.QKSMS.data.ContactHelper;
 import com.moez.QKSMS.data.Message;
@@ -176,6 +177,10 @@ public class NotificationManager {
                                     .setSound(conversationPrefs.getNotificationSoundUri())
                                     .setVibrate(VIBRATION_SILENT)
                                     .setAutoCancel(true);
+
+                    if (WhitelistUtils.isWhitelisted(context, message.getAddress())) {
+                        builder.setSound(WhitelistUtils.getRingtone(context));
+                    }
 
                     if (conversationPrefs.getVibrateEnabled()) {
                         builder.setVibrate(VIBRATION);

@@ -35,24 +35,25 @@ import android.widget.Toast;
 import com.mariussoft.endlessjabber.sdk.EndlessJabberInterface;
 import com.moez.QKSMS.R;
 import com.moez.QKSMS.common.AnalyticsManager;
-import com.moez.QKSMS.ui.dialog.BubblePreferenceDialog;
-import com.moez.QKSMS.interfaces.LiveView;
-import com.moez.QKSMS.receiver.NightModeAutoReceiver;
 import com.moez.QKSMS.common.DonationManager;
 import com.moez.QKSMS.common.ListviewHelper;
 import com.moez.QKSMS.common.LiveViewManager;
 import com.moez.QKSMS.common.utils.DateFormatter;
 import com.moez.QKSMS.common.utils.KeyboardUtils;
+import com.moez.QKSMS.interfaces.LiveView;
+import com.moez.QKSMS.receiver.NightModeAutoReceiver;
 import com.moez.QKSMS.transaction.EndlessJabber;
 import com.moez.QKSMS.transaction.NotificationManager;
 import com.moez.QKSMS.transaction.SmsHelper;
 import com.moez.QKSMS.ui.MainActivity;
 import com.moez.QKSMS.ui.ThemeManager;
+import com.moez.QKSMS.ui.dialog.BubblePreferenceDialog;
 import com.moez.QKSMS.ui.dialog.QKDialog;
 import com.moez.QKSMS.ui.dialog.mms.MMSSetupFragment;
+import com.moez.QKSMS.ui.view.QKTextView;
 import com.moez.QKSMS.ui.view.colorpicker.ColorPickerDialog;
 import com.moez.QKSMS.ui.view.colorpicker.ColorPickerSwatch;
-import com.moez.QKSMS.ui.view.QKTextView;
+import com.moez.QKSMS.ui.whitelist.WhitelistActivity;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -121,6 +122,8 @@ public class SettingsFragment extends PreferenceFragment implements
     public static final String LONG_AS_MMS_AFTER = "pref_key_long_as_mms_after";
     public static final String TIMESTAMPS_24H = "pref_key_24h";
     public static final String NOTIFICATIONS = "pref_key_notifications";
+    public static final String WHITELIST = "pref_key_whitelist";
+    public static final String WHITELIST_RINGTONE = "pref_key_whitelist_ringtone";
     public static final String NOTIFICATION_LED = "pref_key_led";
     public static final String NOTIFICATION_LED_COLOR = "pref_key_theme_led";
     public static final String WAKE = "pref_key_wake";
@@ -550,6 +553,9 @@ public class SettingsFragment extends PreferenceFragment implements
                 break;
             case ICON:
                 ThemeManager.setIcon(mContext);
+                break;
+            case WHITELIST:
+                mContext.startActivity(new Intent(mContext, WhitelistActivity.class));
                 break;
             case NOTIFICATION_LED_COLOR:
                 mLedColorPickerDialog.show(getActivity().getFragmentManager(), "colorpicker");

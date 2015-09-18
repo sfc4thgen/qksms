@@ -19,7 +19,7 @@
     </attr>
 
     <declare-styleable name="RobotoTextView">
-        <attr name="typeface"/>
+        <attr name="typeface" />
     </declare-styleable>
 
     <attr name="typeface">
