@@ -47,6 +47,7 @@ import com.moez.QKSMS.transaction.NotificationManager;
 import com.moez.QKSMS.transaction.SmsHelper;
 import com.moez.QKSMS.ui.MainActivity;
 import com.moez.QKSMS.ui.ThemeManager;
+import com.moez.QKSMS.ui.dialog.BlockedNumberDialog;
 import com.moez.QKSMS.ui.dialog.BubblePreferenceDialog;
 import com.moez.QKSMS.ui.dialog.QKDialog;
 import com.moez.QKSMS.ui.dialog.mms.MMSSetupFragment;
@@ -114,6 +115,7 @@ public class SettingsFragment extends PreferenceFragment implements
     public static final String YAPPY = "pref_key_endlessjabber";
     public static final String BLOCKED_ENABLED = "pref_key_blocked_enabled";
     public static final String BLOCKED_SENDERS = "pref_key_blocked_senders";
+    public static final String BLOCKED_FUTURE = "pref_key_block_future";
     public static final String MOBILE_ONLY = "pref_key_mobile_only";
     public static final String COMPOSE_GROUP = "pref_key_compose_group";
     public static final String SPLIT_SMS = "pref_key_split";
@@ -556,6 +558,8 @@ public class SettingsFragment extends PreferenceFragment implements
                 break;
             case WHITELIST:
                 mContext.startActivity(new Intent(mContext, WhitelistActivity.class));
+            case BLOCKED_FUTURE:
+                BlockedNumberDialog.showDialog(mContext);
                 break;
             case NOTIFICATION_LED_COLOR:
                 mLedColorPickerDialog.show(getActivity().getFragmentManager(), "colorpicker");
